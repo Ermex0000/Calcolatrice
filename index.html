@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <style>
+body {
+   background-color: black;
+    font-size: 25pt;
+}
+
+
+#schermo {
+    
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  background-color: white ;
+  border-color: grey ;
+  border-width: 5px ;
+  font-size: 25px;
+  position: absolute;
+  left: 45px;
+}
+
+#btn1 {
+ position: absolute ;
+ top: 100px;
+ left: 176px;
+ width: 50px;
+ height: 50px;
+}
+
+#btn2 {
+ position: absolute ;
+ top: 100px;
+ left: 275px;
+ width: 50px;
+ height: 50px;
+}
+
+#btn3 {
+ position: absolute ;
+ top: 100px;
+ left: 375px;
+ width: 50px;
+ height: 50px;
+}
+
+#btn4{
+position: absolute;
+top: 200px;
+left: 175px;
+width: 50px;
+height: 50px
+}
+
+#btn5{
+position: absolute;
+top: 200px;
+left: 275px;
+width: 50px;
+height: 50px
+}
+
+#btn6{
+position: absolute;
+top: 200px;
+left: 375px;
+width: 50px;
+height: 50px
+}
+
+#btn7{
+position: absolute;
+top: 300px;
+left: 175px;
+width: 50px;
+height: 50px
+}
+
+#btn8{
+position: absolute;
+top: 300px;
+left: 275px;
+width: 50px;
+height: 50px
+}
+
+#btn9{
+position: absolute;
+top: 300px;
+left: 375px;
+width: 50px;
+height: 50px
+}
+
+#btn0{
+  position: absolute;
+ top: 400px;
+left: 275px;
+ width: 50px;
+ height: 50px
+}
+
+#btn_plus{
+  position: absolute;
+  top: 100px;
+  left: 75px;
+  width: 50px;
+  height: 50px;
+}
+
+#btn_minus{
+  position: absolute;
+  top: 200px;
+  left: 75px;
+  width: 50px;
+  height: 50px;
+  
+}
+#btn_equal{
+  position: absolute;
+  top: 400px;
+  left: 375px;
+ width: 50px;
+ height: 50px;
+  
+}
+#btn_multi{
+  position: absolute;
+  top: 300px;
+  left: 75px;
+width: 50px;
+height: 50px;
+  
+}
+
+#btn_divi{
+  position: absolute;
+  top: 400px;
+  left: 75px;
+ width: 50px;
+ height: 50px;
+  
+} 
+
+#btn_C{
+  position: absolute;
+  top: 400px;
+  left: 175px;
+  width: 50px ;
+  height: 50px;
+}
+
+.btns_calc{
+  background-color: royalblue;
+  border-color: white;
+  border-radius: 3px;
+}
+
+.btns{
+  background-color: darkorange;
+  border-radius: 3px;
+  border-color: black;
+}
+  </style>
+</head>
+
+<body>
+ 
+ <input readonly id="schermo">
+ 
+ <button onclick="appendToSchermo('1')" class="btns" id="btn1">1</button>
+ <button onclick="appendToSchermo('2')" class="btns" id="btn2">2</button>
+ <button onclick="appendToSchermo('3')" class="btns" id="btn3">3</button>
+ <button onclick="appendToSchermo('4')" class="btns" id="btn4">4</button>
+ <button onclick="appendToSchermo('5')" class="btns" id="btn5">5</button>
+ <button onclick="appendToSchermo('6')" class="btns" id="btn6">6</button>
+ <button onclick="appendToSchermo('7')" class="btns" id="btn7">7</button>
+ <button onclick="appendToSchermo('8')" class="btns" id="btn8">8</button>
+ <button onclick="appendToSchermo('9')" class="btns" id="btn9">9</button>
+ <button onclick="appendToSchermo('+')" class="btns_calc" id="btn_plus">+</button>
+ <button onclick="appendToSchermo('-')" class="btns_calc" id="btn_minus">-</button>
+ 
+ <button onclick="calcola('=')" class="btns_calc" id="btn_equal">=</button>
+ 
+ <button onclick="appendToSchermo('*')" class="btns_calc" id="btn_multi">X</button>
+ <button onclick="appendToSchermo('/')" class="btns_calc" id="btn_divi">÷</button>
+  
+ <button onclick="appendToSchermo('0')" class="btns" id="btn0">0</button>
+ 
+ <button onclick="Delete('')" class="btns_calc" id="btn_C" >C</button>
+
+  <script>
+const btn1 = document.getElementById("btn1")
+const btn2 = document.getElementById("btn2")
+const btn3 = document.getElementById("btn3")
+const btn4 = document.getElementById("btn4")
+const btn5 = document.getElementById("btn5")
+const btn6 = document.getElementById("btn6")
+const btn7 = document.getElementById("btn7")
+const btn8 = document.getElementById("btn8")
+const btn9 = document.getElementById("btn9")
+const btns = document.querySelectorAll(".btns")
+const btn_equal = document.getElementById("btn_equal")
+const btn_multi = document.getElementById("btn_multi")
+const btn_divi = document.getElementById("btn_divi")
+const btn0 = document.getElementById("btn0")
+const schermo = document.getElementById("schermo");
+
+function appendToSchermo(input) {
+  schermo.value += input; 
+}
+
+function calcola() {
+ schermo.value = eval(schermo.value)
+}
+
+function Delete(){
+  schermo.value = ""
+}
+  </script>
+</body>
+</html>
