@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcolatrice</title>
 
-  <title>HTML</title>
-  
   <style>
 body {
    background-color: black;
@@ -16,15 +15,22 @@ body {
 
 #schermo {
     
-  position: absolute;
+  position: absolute ;
+
   width: 400px;
   height: 50px;
   background-color: white ;
   border-color: grey ;
   border-width: 5px ;
   font-size: 25px;
+  
+
+  
   position: absolute;
   left: 45px;
+
+  
+  
 }
 
 #btn1 {
@@ -52,6 +58,7 @@ body {
 }
 
 #btn4{
+  
 position: absolute;
 top: 200px;
 left: 175px;
@@ -65,6 +72,7 @@ top: 200px;
 left: 275px;
 width: 50px;
 height: 50px
+  
 }
 
 #btn6{
@@ -73,6 +81,7 @@ top: 200px;
 left: 375px;
 width: 50px;
 height: 50px
+  
 }
 
 #btn7{
@@ -81,6 +90,7 @@ top: 300px;
 left: 175px;
 width: 50px;
 height: 50px
+  
 }
 
 #btn8{
@@ -89,6 +99,7 @@ top: 300px;
 left: 275px;
 width: 50px;
 height: 50px
+  
 }
 
 #btn9{
@@ -97,6 +108,7 @@ top: 300px;
 left: 375px;
 width: 50px;
 height: 50px
+  
 }
 
 #btn0{
@@ -163,16 +175,80 @@ height: 50px;
   border-radius: 3px;
 }
 
+.btns_calc::after{
+  position: absolute ;
+  content: " ";
+  z-index: -1;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+    
+.btns_calc::before{
+  content: "";
+  background-color: royalblue;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  width: 60px;
+  height: 60px;
+  top: -5px;
+  left: -5px;
+  filter: blur(8px);
+}
+
 .btns{
   background-color: darkorange;
   border-radius: 3px;
   border-color: black;
+  display: flex;
+  background-color: darkorange ;
+}
+
+.btns::after{
+  position: absolute ;
+  content: " ";
+  z-index: -1;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+    
+.btns::before{
+  content: "";
+  background-color: darkorange;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  width: 60px;
+  height: 60px;
+  top: -5px;
+  left: -5px;
+  filter: blur(8px);
+}
+
+#divv{
+  border: 2px;
+  border: solid;
+  border-color: white ;
+  height: 450px;
+  width: 415px;
+  position: absolute ;
+  left: 45px;
+  pointer-events: none;
 }
   </style>
 </head>
 
 <body>
- 
  <input readonly id="schermo">
  
  <button onclick="appendToSchermo('1')" class="btns" id="btn1">1</button>
@@ -186,17 +262,13 @@ height: 50px;
  <button onclick="appendToSchermo('9')" class="btns" id="btn9">9</button>
  <button onclick="appendToSchermo('+')" class="btns_calc" id="btn_plus">+</button>
  <button onclick="appendToSchermo('-')" class="btns_calc" id="btn_minus">-</button>
- 
  <button onclick="calcola('=')" class="btns_calc" id="btn_equal">=</button>
- 
  <button onclick="appendToSchermo('*')" class="btns_calc" id="btn_multi">X</button>
  <button onclick="appendToSchermo('/')" class="btns_calc" id="btn_divi">÷</button>
-  
  <button onclick="appendToSchermo('0')" class="btns" id="btn0">0</button>
- 
  <button onclick="Delete('')" class="btns_calc" id="btn_C" >C</button>
 
-  <script>
+ <script>
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
 const btn3 = document.getElementById("btn3")
@@ -224,6 +296,6 @@ function calcola() {
 function Delete(){
   schermo.value = ""
 }
-  </script>
+ </script>
 </body>
 </html>
